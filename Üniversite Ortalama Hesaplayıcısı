@@ -1,0 +1,35 @@
+import tkinter as tk
+from tkinter import messagebox
+
+def topla():
+ s1= int (sayi1.get())
+ s2= int (sayi2.get())
+ messagebox.showinfo('Bilgi','Sonucunuz 50 üzeri ise geçtiniz, 50 altı ise kaldınız !')
+ sonuc['text']= int(s1)*0.4 + int(s2)*0.6
+
+
+#pencere
+pencere = tk.Tk()
+pencere.geometry("500x400")
+pencere.title('Kubi Python- Vize ve Final Ortalama Hesaplayıcısı')
+etiket=tk.Label(text='Hoş Geldiniz !')
+etiket.pack()
+etiket2=tk.Label(pencere,text='Sol alt kutucuğa Vize, Sağ alt kutucuğa Final notunuzu yazınız !')
+etiket2.place (x=10,y=23)
+etiket2.pack()
+
+btopla = tk.Button(text= "Hesapla",font="Verdana 12 bold",command=topla) .place(x=20,y=100)
+
+sayi1 = tk.Entry(width= 10)
+sayi1.place(x=100, y=50)
+
+sayi2 = tk.Entry(width=10)
+sayi2.place(x=320,y=50)
+
+sonuc = tk.Label(text="Sonuc",bg="white")
+sonuc['font'] = "Verdana 12 bold"
+sonuc['fg'] = '#000000' #HEX CODE RENK TANIMLAMASINI KABUL EDER
+sonuc.place(x=400,y=50)
+
+
+pencere.mainloop()
